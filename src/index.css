@@ -24,4 +24,8 @@ html[lang="en"] [lang="de"] {
 html[lang="de"] [lang="en"] {
   display: none;
 }
+
+.srnm {
+  margin-bottom: 1rem;
+}
 /*# sourceMappingURL=index.css.map */

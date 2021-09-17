@@ -21,7 +21,7 @@
         $password = $_POST['password'] ?? "";
         
         if ($username === "admin" && $password === "test")
-            include "main.php";
+            include "home/index.php";
         else if ($username != "" && $password != "") {
             include "login.php";
             echo "<script>alert(\"Wrong Password!\")</script>";
