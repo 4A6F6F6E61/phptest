@@ -2,30 +2,49 @@
     display: flex
     justify-content: center
     align-items: center
-    
+
+html[lang="en"] [lang="de"]
+    display: none
+
+html[lang="de"] [lang="en"]
+    display: none
+
 .sidebar
-    background-color: #444444
+    background-color: var(--bs-dark)
     height: 100vh
-    width: 25rem
-    display: inline-block
+    width: 12.5rem
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 1rem
+    border-style: solid
+    border-color: var(--bs-gray)
+    border-width: 1px
+    border-top: none
+    border-bottom: none
+    border-left: none
+    .buttons
+        width: 100%
+        height: calc(3 * 4rem )
+        justify-content: center
+        align-items: center
+
+@media only screen and (max-width: 760px)
+    .sidebar
+        padding: 0.2rem
+        width: 5rem
 
 .feed
-    background-color: #222222
-    width: 35rem
-    height: 100vh
-    display: inline-block
-
-.right
-    background-color: #922929
-    width: 25rem
+    background-color: var(--bs-dark)
+    width: 43rem
     height: 100vh
     display: inline-block
 
 .nav
     display: flex
-    color: white
+    color: var(--bs-white)
     border-style: solid
-    border-color: grey
+    border-color: var(--bs-gray)
     border-width: 1px
     border-top: none
     a
@@ -42,9 +61,9 @@
     .name
         margin-left: 0.8rem
         font-size: 1.1rem
-        color: white
+        color: var(--bs-white)
     .username
-        color: grey
+        color: var(--bs-gray)
         margin-left: 0.8rem
     img
         border-radius: 50%;
@@ -53,11 +72,11 @@
     margin: 1.2rem
 
 .post-content
-    color: white
+    color: var(--bs-white)
     font-size: 1.6rem
 
 .info  
     display: flex
-    color: grey
+    color: var(--bs-gray)
     .date
         margin-left: 1rem

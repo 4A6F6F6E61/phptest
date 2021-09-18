@@ -5,26 +5,31 @@
     <div class="post">
         <div class="user">
             <div class="img">
-                <img src="https://pbs.twimg.com/profile_images/1415717225135284224/DCDFXLZV_normal.jpg" alt="Pic">
+                <img src="https://pbs.twimg.com/profile_images/1415717225135284224/DCDFXLZV_normal.jpg" alt="Error">
             </div>
             <div class="n">
-                <div class="name">ironmouse VSHOJO</div>
-                <div class="username">@ironmouse</div>
+                <div class="name"><?php echo $name ?></div>
+                <div class="username">@<?php echo $username ?></div>
             </div>
         </div>
         <br>
         <div class="content">
             <div class="post-content">
-                I am 100% tsundere.
+            <?php
+                echo $post_text;
+
+                if($img_url != "")
+                    echo "<img src=\"" . $img_url . "\" alt=\"Error\">";
+            ?>
             </div>
         </div>
         <br>
         <div class="info">
             <div class="time">
-                4:00 AM
+                <?php echo $time ?>
             </div>
             <div class="date">
-                Sep 18, 2021
+                <?php echo $date ?>
             </div>
         </div>
     </div>

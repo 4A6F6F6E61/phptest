@@ -1,5 +1,22 @@
 <div class="sidebar">
-    <div>
-        test
+    <div class="btn-group-vertical buttons">
+        <a class="btn btn-secondary home-btn" href="./" lang="en">
+            Home
+        </a>
+        <a class="btn btn-secondary home-btn" href="./" lang="de">
+            Startseite
+        </a>
+        <a class="btn btn-secondary logout-btn" href="../login/logout.php" lang="en">
+            Logout
+        </a>
+        <a class="btn btn-secondary logout-btn" href="../login/logout.php" lang="de">
+            Abmelden
+        </a>
+        <a class="btn btn-secondary" lang="en">
+            Settings
+        </a>
+        <a class="btn btn-secondary" lang="de">
+            Einstellungen
+        </a>
     </div>
 </div>
