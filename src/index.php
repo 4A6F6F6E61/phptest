@@ -17,7 +17,13 @@
 </head>
 <body>
     <?php
-        $username = $_POST['username'] ?? "";
+        $login = $_GET['login'] ?? false;
+
+        if(!$login)
+            include "login/register.php";
+        else
+            include "login/login.php";
+        /*$username = $_POST['username'] ?? "";
         $password = $_POST['password'] ?? "";
         
         if ($username === "admin" && $password === "test")
@@ -25,7 +31,7 @@
         else if ($username != "" && $password != "") {
             include "login.php";
             echo "<script>alert(\"Wrong Password!\")</script>";
-        } else include "login.php";
+        } else include "login.php";*/
     ?>
 </body>
 </html>
