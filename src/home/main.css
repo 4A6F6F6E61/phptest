@@ -18,16 +18,80 @@
 }
 
 .feed {
-  background-color: #777777;
+  background-color: #222222;
   width: 35rem;
   height: 100vh;
   display: inline-block;
 }
 
-.left {
+.right {
   background-color: #922929;
   width: 25rem;
   height: 100vh;
   display: inline-block;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-top: none;
+}
+
+.nav a {
+  margin-left: 9px;
+  margin-top: 9px;
+  text-decoration: none;
+}
+
+.nav h2 {
+  margin: 0;
+  margin-left: 1rem;
+  margin-top: 5px;
+}
+
+.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user .name {
+  margin-left: 0.8rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.user .username {
+  color: grey;
+  margin-left: 0.8rem;
+}
+
+.user img {
+  border-radius: 50%;
+}
+
+.post {
+  margin: 1.2rem;
+}
+
+.post-content {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: grey;
+}
+
+.info .date {
+  margin-left: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

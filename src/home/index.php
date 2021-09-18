@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['username']))
     {
-        header('Location: ./');
+        header('Location: ../?login=1');
         exit;
     }
 ?>
@@ -20,7 +20,7 @@
             <?php
                 include "sidebar.php";
                 include "feed.php";
-                include "left.php";
+                include "right.php";
             ?>
         </div>
     </body>
