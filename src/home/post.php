@@ -6,6 +6,7 @@
         <div class="b">
             <div class="name-2"><?php echo $name ?> </div>
             <div class="username-2">@<?php echo $username ?></div>
+            <div class="date-2"><?php echo $date ?></div>
         </div>
         <div class="post-content-2">
         <?php
