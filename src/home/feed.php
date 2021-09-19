@@ -1,11 +1,10 @@
 <div class="feed">
     <?php
         $post_id = $_GET["post"] ?? "";
+        require('../mysql.php');
 
         if($post_id != "")
         {
-            require('../mysql.php');
-
             $st = $mysql->prepare("SELECT * FROM posts WHERE POSTID = :id");
             $st->bindParam(":id", $_GET["post"]);
             $st->execute();
@@ -23,9 +22,31 @@
             $row = $st->fetch();
             $name = $row['NAME'];
 
-            include "post.php";
-        } else {
-            echo "test";
+            include "post-full-view.php";
+        } else
+        {
+            $st = $mysql->prepare("SELECT * FROM posts ORDER BY POSTID DESC");
+            $st->execute();
+            $count = $st->rowCount();
+
+            for($i = $count; $i > 0; $i--)
+            {
+                $row = $st->fetch();
+                
+                $username = $row['PUSERNAME'];
+                $post_text = $row['POSTTEXT'];
+                $img_url = $row['IMGURL'];
+                $time = $row['PTIME'];
+                $date = $row['PDATE'];
+
+                $st2 = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+                $st2->bindParam(":user", $username);
+                $st2->execute();
+                $row2 = $st2->fetch();
+                $name = $row2['NAME'];
+                
+                include "post.php"; 
+            }
         }
     ?>
 </div>

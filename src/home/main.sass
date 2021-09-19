@@ -13,7 +13,7 @@ html[lang="de"] [lang="en"]
 
 .sidebar
     background-color: var(--bs-dark)
-    height: 100vh
+    min-height: 100vh
     width: 12.5rem
     display: flex
     align-items: center
@@ -39,7 +39,7 @@ html[lang="de"] [lang="en"]
 .feed
     background-color: var(--bs-dark)
     width: 43rem
-    height: 100vh
+    min-height: 100vh
     display: inline-block
 
 .nav
@@ -67,7 +67,7 @@ html[lang="de"] [lang="en"]
     .username
         color: var(--bs-gray)
         margin-left: 0.8rem
-    img
+    img[round]
         border-radius: 50%;
 
 .post
@@ -82,3 +82,26 @@ html[lang="de"] [lang="en"]
     color: var(--bs-gray)
     .date
         margin-left: 1rem
+
+.b
+    display: block
+    div
+        display: inline-block
+    .name-2
+        color: var(--bs-white)
+    .username-2
+        color: var(--bs-gray)
+
+.post-content-2     
+    color: var(--bs-white)
+    font-size: 1rem
+
+.img-2
+    max-height: 20rem
+    overflow: hidden
+    border-radius: 2%;
+    img
+        display: block
+        max-width: 100%
+        height: auto !important
+
