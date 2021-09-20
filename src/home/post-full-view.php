@@ -5,7 +5,7 @@
 <div class="post">
     <div class="user">
         <div class="img">
-            <img src="https://pbs.twimg.com/profile_images/1415717225135284224/DCDFXLZV_normal.jpg" alt="Error" round>
+            <?php echo '<img src="' . $user_img . '" alt="Error" round>';?>
         </div>
         <div class="n">
             <div class="name"><?php echo $name ?></div>
@@ -19,7 +19,7 @@
             echo $post_text;
 
             if($img_url != "")
-                echo "<img src=\"" . $img_url . "\" alt=\"Error\">";
+                echo "<div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\"></div>";
         ?>
         </div>
     </div>

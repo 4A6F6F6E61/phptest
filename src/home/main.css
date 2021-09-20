@@ -132,6 +132,7 @@ html[lang="de"] [lang="en"] {
 
 .b {
   display: block;
+  text-decoration: none;
 }
 
 .b div {
@@ -170,5 +171,9 @@ html[lang="de"] [lang="en"] {
 
 .date-2 {
   color: var(--bs-gray);
+}
+
+.post-btn {
+  background-color: none;
 }
 /*# sourceMappingURL=main.css.map */

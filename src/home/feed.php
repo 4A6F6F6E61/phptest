@@ -21,6 +21,7 @@
             $st->execute();
             $row = $st->fetch();
             $name = $row['NAME'];
+            $user_img = $row['USERIMG'];
 
             include "post-full-view.php";
         } else
@@ -33,6 +34,7 @@
             {
                 $row = $st->fetch();
                 
+                $post_id = $row["POSTID"];
                 $username = $row['PUSERNAME'];
                 $post_text = $row['POSTTEXT'];
                 $img_url = $row['IMGURL'];
@@ -44,6 +46,7 @@
                 $st2->execute();
                 $row2 = $st2->fetch();
                 $name = $row2['NAME'];
+                $user_img = $row2['USERIMG'];
                 
                 include "post.php"; 
             }

@@ -1,6 +1,6 @@
-<div class="post user">
+<div class="post user" onclick="window.location.assign('?post=<?php echo $post_id?>')">
     <div class="img">
-        <img src="https://pbs.twimg.com/profile_images/1415717225135284224/DCDFXLZV_normal.jpg" alt="Error" round>
+        <?php echo '<img src="' . $user_img . '" alt="Error" round>';?>
     </div>
     <div class="n">
         <div class="b">
