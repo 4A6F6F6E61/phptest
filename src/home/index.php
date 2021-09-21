@@ -10,7 +10,7 @@
     $st->bindParam(":user", $_SESSION['username']);
     $st->execute();
     $row = $st->fetch();
-    $logged_in_user = $row['NAME'];
+    $logged_in_user = $row['USERNAME'];
     $logged_in_user_img = $row['USERIMG'];
 ?>
 
