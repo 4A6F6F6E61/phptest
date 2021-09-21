@@ -10,7 +10,7 @@
                     <i class='bx bx-grid-alt nav_icon'></i>
                     <span class="nav_name">Dashboard</span>
                 </a>
-                <a href="./?account=<?php echo $logged_in_user?>" class="nav_link <?php if(!($_GET['account'] ?? "") == "") echo 'active'; ?>">
+                <a href="./?account=<?php echo $_SESSION['username']?>" class="nav_link <?php if(!($_GET['account'] ?? "") == "") echo 'active'; ?>">
                     <i class='bx bx-user nav_icon'></i>
                     <span class="nav_name">Account</span>
                 </a>
