@@ -1,4 +1,4 @@
-<div class="feed">
+<div class="feed card shadow ">
     <?php
         $post_id = $_GET["post"] ?? "";
         require('../mysql.php');

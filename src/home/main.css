@@ -8,7 +8,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: black;
 }
 
 html[lang="en"] [lang="de"] {
@@ -19,74 +18,30 @@ html[lang="de"] [lang="en"] {
   display: none;
 }
 
-.sidebar {
-  background-color: var(--bs-dark);
-  min-height: 100vh;
-  width: 12.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 1rem;
-  border-style: solid;
-  border-color: var(--bs-gray);
-  border-width: 1px;
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-}
-
-.sidebar .buttons {
-  width: 100%;
-  height: calc(3 * 4rem);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media only screen and (max-width: 760px) {
-  .sidebar {
-    padding: 0.2rem;
-    width: 5rem;
-  }
-}
-
 .feed {
-  background-color: var(--bs-dark);
   width: 43rem;
   min-height: 100vh;
   display: inline-block;
 }
 
-.nav {
+.nav-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: var(--bs-white);
-  border-style: solid;
-  border-color: var(--bs-gray);
-  border-width: 1px;
-  border-top: none;
+  color: var(--bs-dark);
 }
 
-.nav a {
+.nav-2 a {
   margin-left: 9px;
   margin-top: 9px;
   text-decoration: none;
+  color: var(--bs-gray);
 }
 
-.nav h2 {
+.nav-2 h2 {
   margin: 0;
   margin-left: 1rem;
-  margin-top: 5px;
+  margin-bottom: 1px;
 }
 
 .user {
@@ -98,7 +53,7 @@ html[lang="de"] [lang="en"] {
 .user .name {
   margin-left: 0.8rem;
   font-size: 1.1rem;
-  color: var(--bs-white);
+  color: var(--bs-dark);
 }
 
 .user .username {
@@ -115,7 +70,7 @@ html[lang="de"] [lang="en"] {
 }
 
 .post-content {
-  color: var(--bs-white);
+  color: var(--bs-dark);
   font-size: 1.6rem;
 }
 
@@ -140,7 +95,7 @@ html[lang="de"] [lang="en"] {
 }
 
 .b .name-2 {
-  color: var(--bs-white);
+  color: var(--bs-dark);
 }
 
 .b .username-2 {
@@ -148,7 +103,7 @@ html[lang="de"] [lang="en"] {
 }
 
 .post-content-2 {
-  color: var(--bs-white);
+  color: var(--bs-dark);
   font-size: 1rem;
 }
 
@@ -175,5 +130,15 @@ html[lang="de"] [lang="en"] {
 
 .post-btn {
   background-color: none;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.feed {
+  margin-top: 0.5rem;
 }
 /*# sourceMappingURL=main.css.map */

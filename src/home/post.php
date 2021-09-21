@@ -9,12 +9,12 @@
             <div class="date-2"><?php echo $date ?></div>
         </div>
         <div class="post-content-2">
-        <?php
-            echo $post_text;
+            <?php
+                echo $post_text;
 
-            if($img_url != "")
-                echo "<div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\" class=\"limit-img\"></div>";
-        ?>
+                if($img_url != "")
+                    echo "<div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\" class=\"limit-img\"></div>";
+            ?>
         </div>
     </div>
 </div>

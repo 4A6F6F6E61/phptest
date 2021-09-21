@@ -2,7 +2,6 @@
     display: flex
     justify-content: center
     align-items: center
-    background-color: black
 
 html[lang="en"] [lang="de"]
     display: none
@@ -10,59 +9,30 @@ html[lang="en"] [lang="de"]
 html[lang="de"] [lang="en"]
     display: none
 
-.sidebar
-    background-color: var(--bs-dark)
-    min-height: 100vh
-    width: 12.5rem
-    display: flex
-    align-items: center
-    justify-content: center
-    padding: 1rem
-    border-style: solid
-    border-color: var(--bs-gray)
-    border-width: 1px
-    border-top: none
-    border-bottom: none
-    border-left: none
-    .buttons
-        width: 100%
-        height: calc(3 * 4rem )
-        justify-content: center
-        align-items: center
-
-@media only screen and (max-width: 760px)
-    .sidebar
-        padding: 0.2rem
-        width: 5rem
-
 .feed
-    background-color: var(--bs-dark)
     width: 43rem
     min-height: 100vh
     display: inline-block
 
-.nav
+.nav-2
     display: flex
-    color: var(--bs-white)
-    border-style: solid
-    border-color: var(--bs-gray)
-    border-width: 1px
-    border-top: none
+    color: var(--bs-dark)
     a
         margin-left: 9px
         margin-top: 9px
         text-decoration: none
+        color: var(--bs-gray)
     h2
         margin: 0
         margin-left: 1rem
-        margin-top: 5px
+        margin-bottom: 1px
 
 .user
     display: flex
     .name
         margin-left: 0.8rem
         font-size: 1.1rem
-        color: var(--bs-white)
+        color: var(--bs-dark)
     .username
         color: var(--bs-gray)
         margin-left: 0.8rem
@@ -73,7 +43,7 @@ html[lang="de"] [lang="en"]
     margin: 1.2rem
 
 .post-content
-    color: var(--bs-white)
+    color: var(--bs-dark)
     font-size: 1.6rem
 
 .info  
@@ -88,12 +58,12 @@ html[lang="de"] [lang="en"]
     div
         display: inline-block
     .name-2
-        color: var(--bs-white)
+        color: var(--bs-dark)
     .username-2
         color: var(--bs-gray)
 
 .post-content-2     
-    color: var(--bs-white)
+    color: var(--bs-dark)
     font-size: 1rem
 
 .img-2 
@@ -113,3 +83,9 @@ html[lang="de"] [lang="en"]
 
 .post-btn
     background-color: none
+
+.navbar-expand-lg .navbar-collapse
+    justify-content: space-between
+
+.feed
+    margin-top: 0.5rem

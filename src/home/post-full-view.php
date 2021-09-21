@@ -1,4 +1,4 @@
-<div class="nav">
+<div class="nav-2 shadow-sm">
     <a href="./"> Back</a>
     <h2>Post</h2>
 </div>
