@@ -3,7 +3,17 @@
         $post_id = $_GET["post"] ?? "";
         require('../mysql.php');
 
-        if($post_id != "")
+        if(isset($_GET['settings']))
+        {
+            $_SESSION['back-url'] = "./?settings";
+            include 'settings/settings.php';
+        } 
+        else if(isset($_GET['account']))
+        {
+            $_SESSION['back-url'] = "./?account=" . $_GET['account'];
+            include 'account/account.php';
+        }
+        else if($post_id != "")
         {
             $st = $mysql->prepare("SELECT * FROM posts WHERE POSTID = :id");
             $st->bindParam(":id", $_GET["post"]);
@@ -26,6 +36,9 @@
             include "post-full-view.php";
         } else
         {
+            $_SESSION['back-url'] = "./";
+            $_SESSION['current-page'] = "home";
+            
             $st = $mysql->prepare("SELECT * FROM posts ORDER BY POSTID DESC");
             $st->execute();
             $count = $st->rowCount();

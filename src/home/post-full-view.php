@@ -1,5 +1,8 @@
+<?php
+    $_SESSION['current-page'] = "post";
+?>
 <div class="nav-2 shadow-sm">
-    <a href="./"> Back</a>
+    <a href="<?php echo $_SESSION['back-url']?>"> Back</a>
     <h2>Post</h2>
 </div>
 <div class="post">
@@ -17,9 +20,9 @@
         <div class="post-content">
         <?php
             echo $post_text;
-
-            if($img_url != "")
-                echo "<div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\"></div>";
+                
+            if($img_url != "") 
+                echo "<a href=\"" . $_SERVER['REQUEST_URI'] . "&full-img-src=" . $img_url . "\"><div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\"></div></a>";
         ?>
         </div>
     </div>

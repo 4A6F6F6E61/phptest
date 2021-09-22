@@ -11,6 +11,8 @@
     $st->execute();
     $row = $st->fetch();
     $logged_in_user_img = $row['USERIMG'];
+    if(isset($_SESSION['current-page']))
+        $_SESSION['current-page'] = 'home';
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +39,15 @@
         
     </head>
     <body id="body-pd">
+        
+    <?php
+        include 'new-post.php';
+
+        if(isset($_GET['full-img-src']))
+        {
+            include 'fullscreen.php';
+        }
+    ?>
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="header_img"> <img src="<?php echo $logged_in_user_img?>" alt=""> </div>
@@ -48,46 +59,42 @@
     <div class="height-100 bg-light main">
         <?php 
                 include "feed.php";
-            ?>
+        ?>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener("DOMContentLoaded", event => {
 
-const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-const toggle = document.getElementById(toggleId),
-nav = document.getElementById(navId),
-bodypd = document.getElementById(bodyId),
-headerpd = document.getElementById(headerId)
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                nav = document.getElementById(navId),
+                bodypd = document.getElementById(bodyId),
+                headerpd = document.getElementById(headerId)
 
-// Validate that all variables exist
-if(toggle && nav && bodypd && headerpd){
-toggle.addEventListener('click', ()=>{
-// show navbar
-nav.classList.toggle('show')
-// change icon
-toggle.classList.toggle('bx-x')
-// add padding to body
-bodypd.classList.toggle('body-pd')
-// add padding to header
-headerpd.classList.toggle('body-pd')
-})
-}
-}
+                // Validate that all variables exist
+                if(toggle && nav && bodypd && headerpd){
+                    toggle.addEventListener('click', ()=>{
+                    // show navbar
+                    nav.classList.toggle('show-2')
+                    // change icon
+                    toggle.classList.toggle('bx-x')
+                    // add padding to body
+                    bodypd.classList.toggle('body-pd')
+                    // add padding to header
+                    headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
 
-showNavbar('header-toggle','nav-bar','body-pd','header')
+            showNavbar('header-toggle','nav-bar','body-pd','header')     
 
-/*===== LINK ACTIVE =====*/
-const linkColor = document.querySelectorAll('.nav_link')
+            // Your code to run since DOM is loaded and ready
+            var myModal = document.getElementById('newPostModal')
+            var myInput = document.getElementById('myInput')
 
-function colorLink(){
-if(linkColor){
-linkColor.forEach(l=> l.classList.remove('active'))
-this.classList.add('active')
-}
-}
-linkColor.forEach(l=> l.addEventListener('click', colorLink))
-
-// Your code to run since DOM is loaded and ready
-});
+            myModal.addEventListener('shown.bs.modal', function () {
+                myInput.focus()
+            })
+        });
     </script>
+    </body>
 </html>
