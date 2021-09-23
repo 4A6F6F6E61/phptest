@@ -9,7 +9,7 @@
 
         if($count == 0)
         {
-            if($_POST['password-reg'] == $_POST['password-reg-2'])
+            if(isset($_POST['username-reg']) && $_POST['password-reg'] == $_POST['password-reg-2'])
             {
                 $st = $mysql->prepare('INSERT INTO accounts (USERNAME, PASSWORD) VALUES (:user, :pw)');
                 $st->bindParam(':user', $_POST['username-reg']);

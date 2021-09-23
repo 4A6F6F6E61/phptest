@@ -2,7 +2,7 @@
     <nav class="nav">
         <div>
             <a href="#" class="nav_logo">
-                <i class='bx bx-layer nav_logo-icon'></i>
+                <i class='bi bi-cpu nav_logo-icon'></i>
                 <span class="nav_logo-name">Social Media</span>
             </a>
             <div class="nav_list">
