@@ -18,20 +18,12 @@
     display: flex
     justify-content: center
     align-items: center
-    -webkit-animation: fadein 0.4s
-       -moz-animation: fadein 0.4s
-        -ms-animation: fadein 0.4s
-         -o-animation: fadein 0.4s
-            animation: fadein 0.4s
+    animation: fadein 0.4s
 
 #full-img img
     max-height: calc( 100vh - 10rem )
     max-width: calc( 100vw - 10rem )
-    -webkit-animation: fadep 0.4s
-       -moz-animation: fadep 0.4s
-        -ms-animation: fadep 0.4s
-         -o-animation: fadep 0.4s
-            animation: fadep 0.4s
+    animation: fadep 0.4s
 
 @keyframes fadein
     from
@@ -39,62 +31,8 @@
     to   
         background: rgba(0, 0, 0, 0.8) 
 
-
-@-moz-keyframes fadein 
-    from  
-        background: rgba(0, 0, 0, 0) 
-    to    
-        background: rgba(0, 0, 0, 0.8) 
-
-@-webkit-keyframes fadein 
-    from  
-        background: rgba(0, 0, 0, 0) 
-    to    
-        background: rgba(0, 0, 0, 0.8) 
-
-
-@-ms-keyframes fadein 
-    from
-        background: rgba(0, 0, 0, 0) 
-    to
-        background: rgba(0, 0, 0, 0.8) 
-
-
-@-o-keyframes fadein 
-    from
-        background: rgba(0, 0, 0, 0) 
-    to
-        background: rgba(0, 0, 0, 0.8) 
-
 @keyframes fadep
     from
         opacity: 0 
     to   
-        opacity: 1
-
-
-@-moz-keyframes fadep 
-    from  
-        opacity: 0 
-    to    
-        opacity: 1
-
-@-webkit-keyframes fadep 
-    from  
-        opacity: 0
-    to    
-        opacity: 1
-
-
-@-ms-keyframes fadep 
-    from
-        opacity: 0
-    to
-        opacity: 1
-
-
-@-o-keyframes fadep 
-    from
-        opacity: 0 
-    to
         opacity: 1

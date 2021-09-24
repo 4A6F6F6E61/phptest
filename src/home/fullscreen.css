@@ -27,29 +27,14 @@
       -ms-flex-align: center;
           align-items: center;
   -webkit-animation: fadein 0.4s;
-  -webkit-animation--moz-animation: fadein 0.4s;
-  -webkit-animation--moz-animation--ms-animation: fadein 0.4s;
-  -webkit-animation--moz-animation--ms-animation--o-animation: fadein 0.4s;
-  -webkit-animation--moz-animation--ms-animation--o-animation-animation: fadein 0.4s;
+          animation: fadein 0.4s;
 }
 
 #full-img img {
   max-height: calc( 100vh - 10rem);
   max-width: calc( 100vw - 10rem);
   -webkit-animation: fadep 0.4s;
-  -webkit-animation--moz-animation: fadep 0.4s;
-  -webkit-animation--moz-animation--ms-animation: fadep 0.4s;
-  -webkit-animation--moz-animation--ms-animation--o-animation: fadep 0.4s;
-  -webkit-animation--moz-animation--ms-animation--o-animation-animation: fadep 0.4s;
-}
-
-@keyframes fadein {
-  from {
-    background: rgba(0, 0, 0, 0);
-  }
-  to {
-    background: rgba(0, 0, 0, 0.8);
-  }
+          animation: fadep 0.4s;
 }
 
 @-webkit-keyframes fadein {
@@ -61,7 +46,16 @@
   }
 }
 
-@keyframes fadep {
+@keyframes fadein {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@-webkit-keyframes fadep {
   from {
     opacity: 0;
   }
@@ -70,7 +64,7 @@
   }
 }
 
-@-webkit-keyframes fadep {
+@keyframes fadep {
   from {
     opacity: 0;
   }
