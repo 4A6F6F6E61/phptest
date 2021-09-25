@@ -56,6 +56,12 @@ html[lang="de"] [lang="en"] {
   color: var(--bs-dark);
 }
 
+.user .n .name {
+  margin-left: 0.8rem;
+  font-size: 1.15rem;
+  color: var(--bs-dark);
+}
+
 .user .username {
   color: var(--bs-gray);
   margin-left: 0.8rem;

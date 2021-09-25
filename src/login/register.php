@@ -1,7 +1,7 @@
 <?php 
     if(isset($_POST['submit-reg']))
     {
-        require('./mysql.php');
+        //require('./mysql.php');
         $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
         $st->bindParam(":user", $_POST['username-reg']);
         $st->execute();

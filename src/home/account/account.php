@@ -1,4 +1,4 @@
 <?php
     $_SESSION['current-page'] = "account";
-    echo $_SESSION['current-page'];
+    echo $_GET['account'];
 ?>

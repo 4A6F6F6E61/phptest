@@ -30,7 +30,7 @@
                         <input type="text" name="post-tags" class="form-control" id="post-tags" placeholder="Tags...">
                     </div>
                     <?php 
-                        require('../mysql.php');
+                        //require('../mysql.php');
                         $st = $mysql->prepare("SELECT * FROM posts");
                         $st->execute();
                         $id = $st->rowCount();
@@ -48,15 +48,12 @@
 </div>
 
 <?php
-    require('../mysql.php');
+    //require('../mysql.php');
     if(isset($_POST['post-submit']))
     {
         date_default_timezone_set("Europe/Berlin");
-        $st = $mysql->prepare("SELECT * FROM posts");
-        $st->execute();
-        $id = $st->rowCount();
-        $id ++;
 
+        $id = md5(time() . mt_rand(1, 1000000));
         $user = $_SESSION['username'];
         $text = $_POST['post-content'];
         $img  = ($_POST['post-imgurl'] ?? "");

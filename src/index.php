@@ -17,6 +17,7 @@
 </head>
 <body>
     <?php
+        require('./mysql.php');
         $login = $_GET['login'] ?? false;
 
         if(!$login)

@@ -1,10 +1,12 @@
 <div class="post user" onclick="window.location.assign('?post=<?php echo $post_id?>')">
     <div class="img">
-        <?php echo '<img src="' . $user_img . '" alt="Error" round>';?>
+        <a href="./?account=<?php echo $username?>">
+            <img src="<?php echo $user_img ?> " alt="Error" round>
+        </a>
     </div>
     <div class="n">
         <div class="b">
-            <div><a href="./?account=<?php echo $_SESSION['username']?>" class="name-2"><?php echo $name ?> </a></div>
+            <div><a href="./?account=<?php echo $username?>" class="name-2"><?php echo $name ?> </a></div>
             <div class="username-2">@<?php echo $username ?></div>
             <div class="date-2"><?php echo $date ?></div>
         </div>
