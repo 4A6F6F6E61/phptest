@@ -1,6 +1,6 @@
 <?php
 
-$host = 'localhost';
+$host = 'http://35.197.235.105/';
 $name = 'social media app';
 $user = 'root';
 $password = 'J3UsnjXtA2XxYV';
