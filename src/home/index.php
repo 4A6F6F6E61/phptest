@@ -50,13 +50,13 @@
     ?>
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="<?php echo $logged_in_user_img?>" alt=""> </div>
+        <div class="header_img"><img src="<?php echo $logged_in_user_img?>" alt=""> </div>
     </header>
     <?php
         include 'nav.php'
     ?>
     <!--Container Main start-->
-    <div class="height-100 bg-light main">
+    <div class="height-100 main">
         <?php 
                 include "feed.php";
         ?>

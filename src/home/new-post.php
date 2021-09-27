@@ -29,14 +29,6 @@
                         </label>
                         <input type="text" name="post-tags" class="form-control" id="post-tags" placeholder="Tags...">
                     </div>
-                    <?php 
-                        //require('../mysql.php');
-                        $st = $mysql->prepare("SELECT * FROM posts");
-                        $st->execute();
-                        $id = $st->rowCount();
-                        $id++;
-                        echo $id;
-                    ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

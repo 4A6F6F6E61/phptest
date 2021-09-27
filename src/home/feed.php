@@ -1,4 +1,4 @@
-<div class="feed card shadow ">
+<div class="feed card shadow">
     <?php
         $post_id = $_GET["post"] ?? "";
         //require('../mysql.php');
@@ -7,7 +7,7 @@
         {
             $_SESSION['back-url'] = "./?settings";
             include 'settings/settings.php';
-        } 
+        }       
         else if(isset($_GET['account']))
         {
             $_SESSION['back-url'] = "./?account=" . $_GET['account'];

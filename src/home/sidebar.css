@@ -34,7 +34,6 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 1rem;
-  background-color: var(--bs-white);
   z-index: var(--z-fixed);
   -webkit-transition: .5s;
   transition: .5s;

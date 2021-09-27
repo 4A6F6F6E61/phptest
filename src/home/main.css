@@ -146,12 +146,12 @@ html[lang="de"] [lang="en"] {
           justify-content: space-between;
 }
 
-.feed {
-  margin-top: 0.5rem;
-}
-
 .disabled {
   pointer-events: none;
   cursor: default;
+}
+
+.drop {
+  z-index: 99;
 }
 /*# sourceMappingURL=main.css.map */
