@@ -43,7 +43,9 @@
             <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
         </div>
         <br>
-        <input type="submit" class="btn btn-primary" name="submit">
-        <a class="btn btn-secondary" href="?login=0">Register</a>
+        <div class="space-between">
+            <input type="submit" class="btn btn-primary" name="submit">
+            <a class="btn btn-light" href="?login=0">Register</a>
+        </div>
     </form>
 </div>

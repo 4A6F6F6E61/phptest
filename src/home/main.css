@@ -5,9 +5,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 html[lang="en"] [lang="de"] {
@@ -28,14 +25,14 @@ html[lang="de"] [lang="en"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: var(--bs-dark);
+  color: var(--mdb-dark);
 }
 
 .nav-2 a {
   margin-left: 9px;
   margin-top: 9px;
   text-decoration: none;
-  color: var(--bs-gray);
+  color: var(--mdb-dark);
 }
 
 .nav-2 h2 {
@@ -53,17 +50,17 @@ html[lang="de"] [lang="en"] {
 .user .name {
   margin-left: 0.8rem;
   font-size: 1.1rem;
-  color: var(--bs-dark);
+  color: var(--mdb-dark);
 }
 
 .user .n .name {
   margin-left: 0.8rem;
   font-size: 1.15rem;
-  color: var(--bs-dark);
+  color: var(--mdb-dark);
 }
 
 .user .username {
-  color: var(--bs-gray);
+  color: var(--mdb-dark);
   margin-left: 0.8rem;
 }
 
@@ -78,7 +75,7 @@ html[lang="de"] [lang="en"] {
 }
 
 .post-content {
-  color: var(--bs-dark);
+  color: var(--mdb-dark);
   font-size: 1.6rem;
 }
 
@@ -86,7 +83,7 @@ html[lang="de"] [lang="en"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: var(--bs-gray);
+  color: var(--mdb-dark);
 }
 
 .info .date {
@@ -103,15 +100,15 @@ html[lang="de"] [lang="en"] {
 }
 
 .b .name-2 {
-  color: var(--bs-dark);
+  color: var(--mdb-dark);
 }
 
 .b .username-2 {
-  color: var(--bs-gray);
+  color: var(--mdb-dark);
 }
 
 .post-content-2 {
-  color: var(--bs-dark);
+  color: var(--mdb-dark);
   font-size: 1rem;
 }
 
@@ -133,7 +130,7 @@ html[lang="de"] [lang="en"] {
 }
 
 .date-2 {
-  color: var(--bs-gray);
+  color: var(--mdb-dark);
 }
 
 .post-btn {

@@ -33,4 +33,13 @@ html[lang="de"] [lang="en"] {
 .srnm {
   margin-bottom: 1rem;
 }
+
+.space-bewteen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+}
 /*# sourceMappingURL=index.css.map */

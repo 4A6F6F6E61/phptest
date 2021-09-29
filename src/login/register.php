@@ -49,7 +49,9 @@
             <input type="password" name="password-reg-2" class="form-control" id="password-reg" placeholder="Repeat password" required>
         </div>
         <br>
-        <input type="submit" class="btn btn-primary" name="submit-reg">
-        <a class="btn btn-secondary" href="?login=1">Login</a>
+        <div class="space-between">
+            <input type="submit" class="btn btn-primary" name="submit-reg">
+            <a class="btn btn-light" href="?login=1">Login</a>
+        </div>
     </form>
 </div>
