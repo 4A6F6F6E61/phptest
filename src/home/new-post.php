@@ -8,26 +8,26 @@
             </div>
             <form action="index.php" method="post">
                 <div class="modal-body">
-                    <div class="form-group mb-2">
-                        <label for="post-content">
-                            <h6 lang="en"> Post text: </h6>
-                            <h6 lang="de"> Post text: </h6>
+                    <div class="form-outline mb-3">
+                        <textarea type="text" name="post-content" class="form-control" id="post-content" required rows="6"></textarea>
+                        <label class="form-label" for="post-content">
+                            <p lang="en"> Post text: </p>
+                            <p lang="de"> Post text: </p>
                         </label>
-                        <textarea type="text" name="post-content" class="form-control" id="post-content" placeholder="Post..." required rows="6"></textarea>
                     </div>
-                    <div class="form-group mb-2">
-                        <label for="post-imgurl">
-                            <h6 lang="en"> Image Link (optional): </h6>
-                            <h6 lang="de"> Bild Link (optional): </h6>
+                    <div class="form-outline mb-3">
+                        <input type="text" name="post-imgurl" class="form-control" id="post-imgurl">
+                        <label class="form-label" for="post-imgurl">
+                            <p lang="en"> Image Link (optional): </p>
+                            <p lang="de"> Bild Link (optional): </p>
                         </label>
-                        <input type="text" name="post-imgurl" class="form-control" id="post-imgurl" placeholder="Image URL...">
                     </div>
-                    <div class="form-group">
-                        <label for="post-tags">
-                            <h6 lang="en"> Tags (optional): </h6>
-                            <h6 lang="de"> Tags (optional): </h6>
+                    <div class="form-outline">
+                        <input type="text" name="post-tags" class="form-control" id="post-tags">
+                        <label class="form-label" for="post-tags">
+                            <p lang="en"> Tags (optional): </p>
+                            <p lang="de"> Tags (optional): </p>
                         </label>
-                        <input type="text" name="post-tags" class="form-control" id="post-tags" placeholder="Tags...">
                     </div>
                 </div>
                 <div class="modal-footer">

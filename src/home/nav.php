@@ -9,7 +9,7 @@
                 <a href="./" class="link_nav
                 <?php
                     if($_SERVER['REQUEST_URI'] == "/phptest/src/home/")
-                        echo 'active disabled';
+                        echo 'active-nav disabled';
                 ?>">
                     <i class='bx bx-grid-alt nav_icon'></i>
                     <span class="nav_name">Posts</span>
@@ -21,7 +21,7 @@
                 <a href="./?settings" class="link_nav
                 <?php
                     if(isset($_GET['settings']))
-                        echo 'active disabled';
+                        echo 'active-nav disabled';
                 ?>">
                     <i class='bi bi-gear nav_icon'></i> <span class="nav_name">Settings</span>
                 </a> 

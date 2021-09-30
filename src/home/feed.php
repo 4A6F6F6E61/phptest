@@ -1,4 +1,4 @@
-<div class="feed card shadow">
+<div class="feed card mb-4 shadow">
     <?php
         $post_id = $_GET["post"] ?? "";
         //require('../mysql.php');
@@ -39,7 +39,7 @@
             $_SESSION['back-url'] = "./";
             $_SESSION['current-page'] = "home";
             
-            $st = $mysql->prepare("SELECT * FROM posts ORDER BY POSTID DESC");
+            $st = $mysql->prepare("SELECT * FROM posts");
             $st->execute();
             $count = $st->rowCount();
 

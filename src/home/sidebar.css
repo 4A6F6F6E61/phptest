@@ -143,11 +143,11 @@ a {
   padding-left: calc(var(--nav-width) + 1rem);
 }
 
-.active {
+.active-nav {
   color: var(--mdb-light);
 }
 
-.active::before {
+.active-nav::before {
   content: '';
   position: absolute;
   left: 0;

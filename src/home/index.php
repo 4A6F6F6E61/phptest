@@ -122,7 +122,7 @@
                         data-mdb-toggle="modal"
                         data-mdb-target="#exampleModal"
                       >
-                        Launch demo modal
+                        Login
                       </button>';
         ?>
     </header>
@@ -130,7 +130,7 @@
         include 'nav.php'
     ?>
     <!--Container Main start-->
-    <div class="height-100 main">
+    <div class="main">
         <?php 
                 include "feed.php";
         ?>
