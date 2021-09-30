@@ -1,14 +1,66 @@
 <?php
     session_start();
-    
     require('../mysql.php');
-    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-    $st->bindParam(":user", $_SESSION['username']);
-    $st->execute();
-    $row = $st->fetch();
-    $logged_in_user_img = $row['USERIMG'];
+    if(isset($_SESSION['username'])) {
+        $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+        $st->bindParam(":user", $_SESSION['username']);
+        $st->execute();
+        $row = $st->fetch();
+        $logged_in_user_img = $row['USERIMG'];
+    }
     if(isset($_SESSION['current-page']))
         $_SESSION['current-page'] = 'home';
+
+        if(isset($_POST['login-submit']))
+    {
+        $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+        $st->bindParam(":user", $_POST['login-username']);
+        $st->execute();
+        $count = $st->rowCount();
+
+        if($count == 1)
+        {
+            $row = $st->fetch();
+            if(password_verify($_POST['login-password'], $row['PASSWORD']))
+            {
+                $_SESSION['username'] = $row['USERNAME'];
+                header('Location: ');
+                exit;
+            } else {
+                header('Location: ?alert=Wrong%20password');
+            }
+        } else {
+            header('Location: ?alert=Users%20does%20not%20exist');
+        }
+    }
+    if(isset($_POST['register-submit']))
+    {
+        //require('./mysql.php');
+        $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+        $st->bindParam(":user", $_POST['register-username']);
+        $st->execute();
+        $count = $st->rowCount();
+
+        if($count == 0)
+        {
+            if(isset($_POST['register-username']) && $_POST['register-password'] == $_POST['register-password2'])
+            {
+                $st = $mysql->prepare('INSERT INTO accounts (USERNAME, EMAIL, NAME, PASSWORD) VALUES (:user, :email, :name, :pw)');
+                $st->bindParam(':user', $_POST['register-username']);
+                $st->bindParam(':email', $_POST['register-email']);
+                $st->bindParam(':name', $_POST['register-name']);
+                $hash = password_hash($_POST['register-password'], PASSWORD_BCRYPT);
+                $st->bindParam(':pw', $hash);
+                $st->execute();
+                header('Location: ?alert=Account%20successfully%20created');
+            } else {
+                header('Location: ?alert=Password\'s%20don\'t%20match');
+            }
+        } else
+            header('Location: ?alert=Username%20not%20available');
+    }
+
+    if(isset($_GET['alert'])) echo $_GET['alert'];
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +103,7 @@
         
     <?php
         include 'new-post.php';
+        include '../login/login-register.php';
 
         if(isset($_GET['full-img-src']))
         {
@@ -59,7 +112,19 @@
     ?>
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"><img src="<?php echo $logged_in_user_img?>" alt=""> </div>
+        <?php 
+            if(isset($_SESSION['username']))
+                echo "<div class=\"header_img\"><img src=\"$logged_in_user_img\" alt=\"\"></div>";
+            else 
+                echo '<button
+                        type="button"
+                        class="btn btn-primary"
+                        data-mdb-toggle="modal"
+                        data-mdb-target="#exampleModal"
+                      >
+                        Launch demo modal
+                      </button>';
+        ?>
     </header>
     <?php
         include 'nav.php'
