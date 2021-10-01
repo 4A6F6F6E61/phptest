@@ -151,4 +151,12 @@ html[lang="de"] [lang="en"] {
 .drop {
   z-index: 99;
 }
+
+.btn-custom {
+  text-transform: none !important;
+}
+
+.dropdown-toggle:after {
+  content: none !important;
+}
 /*# sourceMappingURL=main.css.map */

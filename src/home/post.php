@@ -1,4 +1,4 @@
-<div class="post user" onclick="window.location.assign('?post=<?php echo $post_id?>')">
+<div class="post user">
     <div class="img">
         <a href="./?account=<?php echo $username?>">
             <img src="<?php echo $user_img ?> " alt="Error" round>
@@ -6,11 +6,26 @@
     </div>
     <div class="n">
         <div class="b">
-            <div><a href="./?account=<?php echo $username?>" class="name-2"><?php echo $name ?> </a></div>
-            <div class="username-2">@<?php echo $username ?></div>
+            <div class="btn-group shadow-0 dropend">
+                <a
+                    class="name-2 dropdown-toggle"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                    >
+                    <?php echo $name ?>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="username-2">@<a href="./?account=<?php echo $username?>" class="username-2"><?php echo $username ?></a></div>
             <div class="date-2"><?php echo $date ?></div>
         </div>
-        <div class="post-content-2">
+        <div class="post-content-2" onclick="window.location.assign('?post=<?php echo $post_id?>')">
             <?php
                 echo $post_text;
                 if(isset($_GET['settings']) || isset($_GET['account']) || isset($_GET['post'])) 
