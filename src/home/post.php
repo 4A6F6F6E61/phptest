@@ -1,6 +1,6 @@
 <div class="post user">
     <div class="img">
-        <a href="./?account=<?php echo $username?>">
+        <a href="./index.php?account=<?php echo $username?>">
             <img src="<?php echo $user_img ?> " alt="Error" round>
         </a>
     </div>
@@ -22,7 +22,7 @@
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
             </div>
-            <div class="username-2">@<a href="./?account=<?php echo $username?>" class="username-2"><?php echo $username ?></a></div>
+            <div class="username-2">@<a href="./index.php?account=<?php echo $username?>" class="username-2"><?php echo $username ?></a></div>
             <div class="date-2"><?php echo $date ?></div>
         </div>
         <div class="post-content-2" onclick="window.location.assign('?post=<?php echo $post_id?>')">
@@ -35,7 +35,7 @@
                 } else
                 {
                     if($img_url != "")
-                        echo "<a href=\"./?full-img-src=" . $img_url . "\"><div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\" class=\"limit-img\"></div></a>";
+                        echo "<a href=\"./index.php?full-img-src=" . $img_url . "\"><div class=\"img-2\"><img src=\"" . $img_url . "\" alt=\"Error\" class=\"limit-img\"></div></a>";
                 }
                 
             ?>

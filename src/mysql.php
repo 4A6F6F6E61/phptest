@@ -1,9 +1,9 @@
 <?php
 
 $host = 'localhost';
-$name = 'social media app';
+$name = 'social-media-app';
 $user = 'root';
-$password = 'ejYrkGnzPqZM';
+$password = '';
 
 try {
     $mysql = new PDO("mysql:host=$host;dbname=$name", $user, $password);

@@ -9,7 +9,7 @@
         $logged_in_user_img = $row['USERIMG'];
     }
     if(isset($_SESSION['current-page']))
-        $_SESSION['current-page'] = 'home';
+    $_SESSION['current-page'] = 'home';
 
         if(isset($_POST['login-submit']))
     {
@@ -24,7 +24,7 @@
             if(password_verify($_POST['login-password'], $row['PASSWORD']))
             {
                 $_SESSION['username'] = $row['USERNAME'];
-                header('Location: ');
+                header('Location: index.php');
                 exit;
             } else {
                 header('Location: ?alert=Wrong%20password');

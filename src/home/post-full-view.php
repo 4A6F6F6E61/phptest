@@ -7,13 +7,13 @@
 </div>
 <div class="post">
     <div class="user">
-        <a href="./?account=<?php echo $username?>">
+        <a href="./index.php?account=<?php echo $username?>">
             <div class="img">
                 <img src="<?php echo $user_img ?> " alt="Error" round>
             </div>
         </a>
         <div class="n">
-            <div ><a href="./?account=<?php echo $username?>" class="name"><?php echo $name ?> </a></div>
+            <div ><a href="./index.php?account=<?php echo $username?>" class="name"><?php echo $name ?> </a></div>
             <div class="username">@<?php echo $username ?></div>
         </div>
     </div>
