@@ -7,14 +7,14 @@
 </div>
 <div class="post">
     <div class="user">
-        <a href="./index.php?account=<?php echo $username?>">
+        <a href="./?account=<?php echo $username?>">
             <div class="img">
                 <img src="<?php echo $user_img ?> " alt="Error" round>
             </div>
         </a>
         <div class="n">
             <div>
-                <a href="./index.php?account=<?php echo $username?>" class="name"><?php echo $name ?> </a>
+                <a href="./?account=<?php echo $username?>" class="name"><?php echo $name ?> </a>
                 <?php 
                     if($nsfw) echo "<a class=\"nsfw-tag\">nsfw</a>"
                 ?>

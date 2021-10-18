@@ -5,12 +5,12 @@
 
         if(isset($_GET['settings']))
         {
-            $_SESSION['back-url'] = "./index.php?settings";
+            $_SESSION['back-url'] = "./?settings";
             include 'settings/settings.php';
         }       
         else if(isset($_GET['account']))
         {
-            $_SESSION['back-url'] = "./index.php?account=" . $_GET['account'];
+            $_SESSION['back-url'] = "./?account=" . $_GET['account'];
             include 'account/account.php';
         }
         else if($post_id != "")
@@ -37,7 +37,7 @@
             include "post-full-view.php";
         } else
         {
-            $_SESSION['back-url'] = "./index.php";
+            $_SESSION['back-url'] = "./";
             $_SESSION['current-page'] = "home";
             
             $st = $mysql->prepare("SELECT * FROM posts");

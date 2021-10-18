@@ -24,7 +24,7 @@
             if(password_verify($_POST['login-password'], $row['PASSWORD']))
             {
                 $_SESSION['username'] = $row['USERNAME'];
-                header('Location: index.php');
+                header('Location: ');
                 exit;
             } else {
                 header('Location: ?alert=Wrong%20password');
