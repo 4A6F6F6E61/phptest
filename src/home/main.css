@@ -107,6 +107,19 @@ html[lang="de"] [lang="en"] {
   color: var(--mdb-dark);
 }
 
+.nsfw-tag {
+  color: var(--mdb-red);
+  border-style: solid;
+  border-width: 1px;
+  padding: 0 3px 0 3px;
+  border-radius: 5px;
+  margin-left: .5rem;
+}
+
+.nsfw-tag:hover {
+  color: var(--mdb-red);
+}
+
 .post-content-2 {
   color: var(--mdb-dark);
   font-size: 1rem;

@@ -25,6 +25,7 @@
             $img_url = $row['IMGURL'];
             $time = $row['PTIME'];
             $date = $row['PDATE'];
+            $nsfw  = $row['NSFW'];
 
             $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
             $st->bindParam(":user", $username);
@@ -53,15 +54,18 @@
                 $img_url = $row['IMGURL'];
                 $time = $row['PTIME'];
                 $date = $row['PDATE'];
+                $nsfw  = $row['NSFW'];
 
-                $st2 = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-                $st2->bindParam(":user", $username);
-                $st2->execute();
-                $row2 = $st2->fetch();
-                $name = $row2['NAME'];
-                $user_img = $row2['USERIMG'];
-                
-                include "post.php"; 
+                if(!$nsfw || ($_SESSION['settings-nsfw'] ?? false)) {
+                    $st2 = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+                    $st2->bindParam(":user", $username);
+                    $st2->execute();
+                    $row2 = $st2->fetch();
+                    $name = $row2['NAME'];
+                    $user_img = $row2['USERIMG'];
+                    
+                    include "post.php"; 
+                }
             }
         }
     ?>

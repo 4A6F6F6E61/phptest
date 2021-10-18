@@ -13,7 +13,12 @@
             </div>
         </a>
         <div class="n">
-            <div ><a href="./index.php?account=<?php echo $username?>" class="name"><?php echo $name ?> </a></div>
+            <div>
+                <a href="./index.php?account=<?php echo $username?>" class="name"><?php echo $name ?> </a>
+                <?php 
+                    if($nsfw) echo "<a class=\"nsfw-tag\">nsfw</a>"
+                ?>
+            </div>
             <div class="username">@<?php echo $username ?></div>
         </div>
     </div>

@@ -20,11 +20,14 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                     <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
-            </div>
+                </ul> 
+            </div> 
             <div class="username-2">@<a href="./index.php?account=<?php echo $username?>" class="username-2"><?php echo $username ?></a></div>
             <div class="date-2"><?php echo $date ?></div>
-        </div>
+            <?php 
+                if($nsfw) echo "<div class=\"nsfw-tag\">nsfw</div>"
+            ?>
+        </div> 
         <div class="post-content-2" onclick="window.location.assign('?post=<?php echo $post_id?>')">
             <?php
                 echo $post_text;
