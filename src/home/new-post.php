@@ -22,11 +22,25 @@
                             <p lang="de"> Bild Link (optional): </p>
                         </label>
                     </div>
+                    <!-- Tags -->
                     <div class="form-outline">
                         <input type="text" name="post-tags" class="form-control" id="post-tags">
                         <label class="form-label" for="post-tags">
                             <p lang="en"> Tags (optional): </p>
                             <p lang="de"> Tags (optional): </p>
+                        </label>
+                    </div>
+                    <!-- NSFW checkbox -->
+                    <div class="form-check mt-3">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                            name="post-nsfw"
+                        >
+                        <label class="form-check-label" for="flexCheckDefault">
+                            nsfw
                         </label>
                     </div>
                 </div>
@@ -52,8 +66,12 @@
         $tags = ($_POST['post-tags'] ?? "");
         $time = date("h:i a", time());
         $date = date("d. M Y");
+        if(isset($_POST['post-nsfw']))
+            $post_nsfw = 1;
+        else
+            $post_nsfw = 0;
 
-        $st3 = $mysql->prepare('INSERT INTO posts (POSTID, PUSERNAME, POSTTEXT, IMGURL, PTIME, PDATE, PTAGS) VALUES (:id, :user, :text, :img, :time, :date, :tags)');
+        $st3 = $mysql->prepare('INSERT INTO posts (POSTID, PUSERNAME, POSTTEXT, IMGURL, PTIME, PDATE, PTAGS, NSFW) VALUES (:id, :user, :text, :img, :time, :date, :tags, :nsfw)');
         $st3->bindParam(':id', $id);
         $st3->bindParam(':user', $user);
         $st3->bindParam(':text', $text);
@@ -61,6 +79,7 @@
         $st3->bindParam(':time', $time);
         $st3->bindParam(':date', $date);
         $st3->bindParam(':tags', $tags);
+        $st3->bindParam(':nsfw', $post_nsfw);
         $st3->execute();
     }
 ?>
