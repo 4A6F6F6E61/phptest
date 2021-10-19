@@ -7,20 +7,7 @@
     <div class="n">
         <div class="b">
             <div class="btn-group shadow-0 dropend">
-                <a
-                    class="name-2 dropdown-toggle"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                    >
-                    <?php echo $name ?>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul> 
+                <?php include "./account/account-dropdown.php" ?>
             </div> 
             <div class="username-2">@<a href="./?account=<?php echo $username?>" class="username-2"><?php echo $username ?></a></div>
             <div class="date-2"><?php echo $date ?></div>

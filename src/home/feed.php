@@ -63,6 +63,7 @@
                     $row2 = $st2->fetch();
                     $name = $row2['NAME'];
                     $user_img = $row2['USERIMG'];
+                    $bio = $row2['BIO'];
                     
                     include "post.php"; 
                 }

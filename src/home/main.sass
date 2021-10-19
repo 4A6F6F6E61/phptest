@@ -73,6 +73,7 @@ html[lang="de"] [lang="en"]
     padding: 0 3px 0 3px
     border-radius: 5px
     margin-left: .5rem
+    font-size: .8rem
 .nsfw-tag:hover
     color: var(--mdb-red)
 
@@ -85,12 +86,14 @@ html[lang="de"] [lang="en"]
     overflow: hidden
     border-radius: 2%;
     margin-top: 0.2rem
+    width: fit-content
     img
         display: block
         max-width: 100%
         height: auto !important
 .n
     margin-left: 0.5rem
+    width: 100%
     
 .date-2
     color: var(--mdb-dark)
@@ -114,3 +117,36 @@ html[lang="de"] [lang="en"]
 .dropdown-toggle:after
     content: none !important
   
+.c-dropdown
+
+    padding: 5px
+    display: grid !important
+    grid-template-columns: .5fr 2fr !important
+    grid-template-rows: .5fr .5fr .1fr
+    .three
+        grid-column-start: 1
+        grid-column-end: 4
+
+.dd
+    background-color: var(--mdb-dark)
+    color: var(--mdb-light)
+    min-width: 15rem
+    max-width: 20rem
+    border-radius: 10px
+    overflow: hidden
+    .dd-img
+        grid-row-start: 1
+        grid-row-end: 3
+        margin-right: .4rem
+        img
+            max-height: 2.7rem
+            max-width: 2.7rem
+    .dd-name
+        font-size: 1rem
+    .dd-username
+        grid-row-start: 2
+        grid-row-end: 3
+        font-size: .8rem
+.dd-info
+    width: 100%
+    padding: 5px
