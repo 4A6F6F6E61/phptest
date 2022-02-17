@@ -113,9 +113,11 @@
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <?php 
-            if(isset($_SESSION['username']))
+            if(isset($_SESSION['username']) && $logged_in_user_img)
                 echo "<div class=\"header_img\"><img src=\"$logged_in_user_img\" alt=\"\"></div>";
-            else 
+            else if (isset($_SESSION['username']))
+                echo "<div class=\"header_img\"><img src=\"../img/default-user.png\" alt=\"\"></div>";
+            else
                 echo '<button
                         type="button"
                         class="btn btn-primary"
@@ -133,7 +135,6 @@
     <div class="main">
         <?php 
                 include "feed.php";
-                echo password_hash("test", PASSWORD_BCRYPT)
         ?>
     </div>
     <script>

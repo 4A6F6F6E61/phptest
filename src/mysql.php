@@ -1,14 +1,9 @@
 <?php
-/*
-$host = '127.0.0.1';
-$name = 'phptest';
+
+$host = 'localhost';
+$name = 'social-media';
 $user = 'root';
-$password = 'ejYrkGnz1';
-*/
-$host = 'remotemysql.com';
-$name = 'WTtfKp6ijf';
-$user = 'WTtfKp6ijf';
-$password = 'dYTYNFiwu4';
+$password = '';
 
 try {
     $mysql = new PDO("mysql:host=$host;dbname=$name", $user, $password);
