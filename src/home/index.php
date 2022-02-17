@@ -133,6 +133,7 @@
     <div class="main">
         <?php 
                 include "feed.php";
+                echo password_hash("test", PASSWORD_BCRYPT)
         ?>
     </div>
     <script>

@@ -56,7 +56,8 @@
                 $date = $row['PDATE'];
                 $nsfw  = $row['NSFW'];
 
-                if(!$nsfw || ($_SESSION['settings-nsfw'] ?? false)) {
+                if(!$nsfw || ($_SESSION['settings-nsfw'] ?? false))
+                {
                     $st2 = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
                     $st2->bindParam(":user", $username);
                     $st2->execute();
