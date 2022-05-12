@@ -1,8 +1,8 @@
 <?php
 
-$host = 'localhost';
-$name = 'social-media';
-$user = 'root';
+$host     = 'localhost;port=8080';
+$name     = 'social-media';
+$user     = 'root';
 $password = '';
 
 try {

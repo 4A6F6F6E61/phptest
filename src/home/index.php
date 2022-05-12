@@ -1,66 +1,63 @@
 <?php
-    session_start();
-    require('../mysql.php');
-    if(isset($_SESSION['username'])) {
-        $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-        $st->bindParam(":user", $_SESSION['username']);
-        $st->execute();
-        $row = $st->fetch();
-        $logged_in_user_img = $row['USERIMG'];
-    }
-    if(isset($_SESSION['current-page']))
+session_start();
+require '../mysql.php';
+if(isset($_SESSION['username']))
+{
+    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+    $st->bindParam(":user", $_SESSION['username']);
+    $st->execute();
+    $row = $st->fetch();
+    $logged_in_user_img = $row['USERIMG'];
+}
+if(isset($_SESSION['current-page']))
     $_SESSION['current-page'] = 'home';
 
-        if(isset($_POST['login-submit']))
-    {
-        $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-        $st->bindParam(":user", $_POST['login-username']);
-        $st->execute();
-        $count = $st->rowCount();
+if(isset($_POST['login-submit']))
+{
+    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+    $st->bindParam(":user", $_POST['login-username']);
+    $st->execute();
+    $count = $st->rowCount();
 
-        if($count == 1)
+    if($count == 1)
+    {
+        $row = $st->fetch();
+        if(password_verify($_POST['login-password'], $row['PASSWORD']))
         {
-            $row = $st->fetch();
-            if(password_verify($_POST['login-password'], $row['PASSWORD']))
-            {
-                $_SESSION['username'] = $row['USERNAME'];
-                header('Location: ');
-                exit;
-            } else {
-                header('Location: ?alert=Wrong%20password');
-            }
-        } else {
-            header('Location: ?alert=Users%20does%20not%20exist');
+            $_SESSION['username'] = $row['USERNAME'];
+            header('Location: ');
+            exit;
         }
+        else header('Location: ?alert=Wrong%20password');
     }
-    if(isset($_POST['register-submit']))
+    else header('Location: ?alert=Users%20does%20not%20exist');
+}
+if(isset($_POST['register-submit']))
+{
+    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
+    $st->bindParam(":user", $_POST['register-username']);
+    $st->execute();
+    $count = $st->rowCount();
+
+    if($count == 0)
     {
-        //require('./mysql.php');
-        $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-        $st->bindParam(":user", $_POST['register-username']);
-        $st->execute();
-        $count = $st->rowCount();
-
-        if($count == 0)
+        if(isset($_POST['register-username']) && $_POST['register-password'] == $_POST['register-password2'])
         {
-            if(isset($_POST['register-username']) && $_POST['register-password'] == $_POST['register-password2'])
-            {
-                $st = $mysql->prepare('INSERT INTO accounts (USERNAME, EMAIL, NAME, PASSWORD) VALUES (:user, :email, :name, :pw)');
-                $st->bindParam(':user', $_POST['register-username']);
-                $st->bindParam(':email', $_POST['register-email']);
-                $st->bindParam(':name', $_POST['register-name']);
-                $hash = password_hash($_POST['register-password'], PASSWORD_BCRYPT);
-                $st->bindParam(':pw', $hash);
-                $st->execute();
-                header('Location: ?alert=Account%20successfully%20created');
-            } else {
-                header('Location: ?alert=Password\'s%20don\'t%20match');
-            }
-        } else
-            header('Location: ?alert=Username%20not%20available');
-    }
+            $st = $mysql->prepare('INSERT INTO accounts (USERNAME, EMAIL, NAME, PASSWORD) VALUES (:user, :email, :name, :pw)');
+            $st->bindParam(':user', $_POST['register-username']);
+            $st->bindParam(':email', $_POST['register-email']);
+            $st->bindParam(':name', $_POST['register-name']);
+            $hash = password_hash($_POST['register-password'], PASSWORD_BCRYPT);
+            $st->bindParam(':pw', $hash);
+            $st->execute();
+            header('Location: ?alert=Account%20successfully%20created');
+        }
+        else header('Location: ?alert=Password\'s%20don\'t%20match');
+    } 
+    else header('Location: ?alert=Username%20not%20available');
+}
 
-    if(isset($_GET['alert'])) echo $_GET['alert'];
+if(isset($_GET['alert'])) echo $_GET['alert'];
 ?>
 
 <!DOCTYPE html>
@@ -174,8 +171,8 @@
     </script>
     <!-- MDB -->
     <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
     ></script>
     </body>
 </html>
