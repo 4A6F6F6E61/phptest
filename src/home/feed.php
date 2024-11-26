@@ -1,7 +1,7 @@
-<div class="feed card mb-4 shadow">
+<div class="feed">
     <?php
         $post_id = $_GET["post"] ?? "";
-        //require('../mysql.php');
+        //require('../../db/main.php');
 
         if(isset($_GET['settings']))
         {
@@ -63,10 +63,10 @@
                     $st2->execute();
                     $row2 = $st2->fetch();
                     $name = $row2['NAME'];
-                    $user_img = $row2['USERIMG'];
+                    $user_img = $row2['USERIMG'] ?: "../img/default-user.png";
                     $bio = $row2['BIO'];
                     
-                    include "post.php"; 
+                    include "post_chatgpt.php"; 
                 }
             }
         }

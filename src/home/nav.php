@@ -8,7 +8,7 @@
             <div class="nav_list">
                 <a href="./" class="link_nav
                 <?php
-                    if($_SERVER['REQUEST_URI'] == "/phptest/src/home/")
+                    if($_SERVER['REQUEST_URI'] == "/php-social/src/home/")
                         echo 'active-nav disabled';
                 ?>">
                     <i class='bx bx-grid-alt nav_icon'></i>
@@ -18,7 +18,7 @@
                     if(isset($_SESSION['username']))
                         include "account/account-link.php";
                 ?>
-                <a href="./?settings" class="link_nav
+                <a href="?settings" class="link_nav
                 <?php
                     if(isset($_GET['settings']))
                         echo 'active-nav disabled';

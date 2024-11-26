@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../mysql.php';
+require '../../db/main.php';
 if(isset($_SESSION['username']))
 {
     $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
@@ -82,8 +82,8 @@ if(isset($_GET['alert'])) echo $_GET['alert'];
         rel="stylesheet"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="sidebar.css">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./sidebar.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         <script>
             var lang = navigator.language || navigator.userLanguage

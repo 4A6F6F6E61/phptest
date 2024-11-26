@@ -31,7 +31,7 @@
 </head>
 <body>
     <?php
-        require('./mysql.php');
+        require('../db/main.php');
         $login = $_GET['login'] ?? false;
 
         include 'login/login-register.php';
