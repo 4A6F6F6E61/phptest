@@ -60,7 +60,7 @@
         date_default_timezone_set("Europe/Berlin");
 
         $id = md5(time() . mt_rand(1, 1000000));
-        $user = $_SESSION['username'];
+        $user = $_SESSION['user_id'];
         $text = $_POST['post-content'];
         $img  = ($_POST['post-imgurl'] ?? "");
         $tags = ($_POST['post-tags'] ?? "");

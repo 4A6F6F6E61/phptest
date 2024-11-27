@@ -1,60 +1,30 @@
 <?php
+require_once '../../db/main.php';
+require_once '../../db/Auth.php';
+require_once '../../db/User.php';
+
 session_start();
-require '../../db/main.php';
-if(isset($_SESSION['username']))
+
+if(isset($_SESSION['user_id']))
 {
-    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-    $st->bindParam(":user", $_SESSION['username']);
-    $st->execute();
-    $row = $st->fetch();
-    $logged_in_user_img = $row['USERIMG'];
+    $logged_in_user_img = User::find('id', $_SESSION['user_id'])->user_img;
 }
 if(isset($_SESSION['current-page']))
     $_SESSION['current-page'] = 'home';
 
 if(isset($_POST['login-submit']))
 {
-    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-    $st->bindParam(":user", $_POST['login-username']);
-    $st->execute();
-    $count = $st->rowCount();
-
-    if($count == 1)
-    {
-        $row = $st->fetch();
-        if(password_verify($_POST['login-password'], $row['PASSWORD']))
-        {
-            $_SESSION['username'] = $row['USERNAME'];
-            header('Location: ');
-            exit;
-        }
-        else header('Location: ?alert=Wrong%20password');
-    }
-    else header('Location: ?alert=Users%20does%20not%20exist');
+    Auth::login($_POST['login-username'], $_POST['login-password']);
 }
 if(isset($_POST['register-submit']))
 {
-    $st = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
-    $st->bindParam(":user", $_POST['register-username']);
-    $st->execute();
-    $count = $st->rowCount();
-
-    if($count == 0)
-    {
-        if(isset($_POST['register-username']) && $_POST['register-password'] == $_POST['register-password2'])
-        {
-            $st = $mysql->prepare('INSERT INTO accounts (USERNAME, EMAIL, NAME, PASSWORD) VALUES (:user, :email, :name, :pw)');
-            $st->bindParam(':user', $_POST['register-username']);
-            $st->bindParam(':email', $_POST['register-email']);
-            $st->bindParam(':name', $_POST['register-name']);
-            $hash = password_hash($_POST['register-password'], PASSWORD_BCRYPT);
-            $st->bindParam(':pw', $hash);
-            $st->execute();
-            header('Location: ?alert=Account%20successfully%20created');
-        }
-        else header('Location: ?alert=Password\'s%20don\'t%20match');
-    } 
-    else header('Location: ?alert=Username%20not%20available');
+    Auth::register(
+        $_POST['register-username'],
+        $_POST['register-email'],
+        $_POST['register-name'],
+        $_POST['register-password'],
+        $_POST['register-password2']
+    );
 }
 
 if(isset($_GET['alert'])) echo $_GET['alert'];
@@ -110,9 +80,9 @@ if(isset($_GET['alert'])) echo $_GET['alert'];
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <?php 
-            if(isset($_SESSION['username']) && $logged_in_user_img)
+            if(isset($_SESSION['user_id']) && $logged_in_user_img)
                 echo "<div class=\"header_img\"><img src=\"$logged_in_user_img\" alt=\"\"></div>";
-            else if (isset($_SESSION['username']))
+            else if (isset($_SESSION['user_id']))
                 echo "<div class=\"header_img\"><img src=\"../img/default-user.png\" alt=\"\"></div>";
             else
                 echo '<button

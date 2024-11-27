@@ -15,7 +15,7 @@
                     <span class="nav_name">Posts</span>
                 </a>
                 <?php
-                    if(isset($_SESSION['username']))
+                    if(isset($_SESSION['user_id']))
                         include "account/account-link.php";
                 ?>
                 <a href="?settings" class="link_nav
@@ -26,7 +26,7 @@
                     <i class='bi bi-gear nav_icon'></i> <span class="nav_name">Settings</span>
                 </a> 
                 <?php 
-                    if(isset($_SESSION['username']))
+                    if(isset($_SESSION['user_id']))
                         include "new-post-link.php"
                 ?>
             </div>
